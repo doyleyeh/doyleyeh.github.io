@@ -31,7 +31,9 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm install
+          npm install next@14.1.0
 
       - name: Build with Next.js
         run: npm run build
