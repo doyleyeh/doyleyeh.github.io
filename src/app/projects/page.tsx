@@ -7,6 +7,32 @@ import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
   {
+    id: "spam-api",
+    title: "Spam Classification API",
+    date: "Jul 2025",
+    description:
+      "A machine learning API for classifying text messages as spam or ham using DistilBERT. The project features a FastAPI backend, supports both traditional server and AWS Lambda serverless deployment, and includes a full model training pipeline, Docker support, and comprehensive testing.",
+    techStack: [
+      "DistilBERT",
+      "FastAPI",
+      "Python",
+      "Docker",
+      "AWS Lambda",
+      "Hugging Face",
+      "Jupyter Notebook",
+    ],
+    githubUrl: "https://github.com/doyleyeh/spam_api",
+    achievements: [
+      "Built a REST API for spam/ham classification using DistilBERT and FastAPI",
+      "Enabled both server and serverless (AWS Lambda) deployment with Docker support",
+      "Developed a complete model training and evaluation pipeline",
+      "Provided batch and single-message prediction endpoints with confidence scores",
+      "Included interactive API documentation via Swagger and ReDoc",
+      "Supported easy local and cloud deployment with clear instructions",
+    ],
+  },
+  {
+    id: "portfolio",
     title: "Personal Portfolio Website",
     date: "April 2025",
     description:
@@ -27,6 +53,7 @@ const projects = [
     ],
   },
   {
+    id: "flare-slm",
     title: "Active Retrieval-Augmented Generation with Small Language Models",
     date: "Dec 2024",
     description:
@@ -49,6 +76,33 @@ const projects = [
     ],
   },
   {
+    id: "llm-classifier",
+    title: "LLM Text Completion Classifier",
+    date: "Oct 2024",
+    description:
+      "A deep learning classifier to identify which Large Language Model (LLM) generated a given text completion. Built a dataset of 25,000 prompt-completion pairs, fine-tuned multiple transformer models, and performed comprehensive evaluation and error analysis.",
+    techStack: [
+      "ALBERT",
+      "DistilBERT",
+      "RoBERTa",
+      "LoRA",
+      "PyTorch",
+      "Hugging Face",
+      "Jupyter Notebook",
+      "Data Augmentation",
+    ],
+    githubUrl: "https://github.com/a-shah1200/MidTerm-Project/",
+    achievements: [
+      "Constructed a dataset of 25,000 prompt-completion pairs from five LLMs through an automated pipeline for text extraction, truncation, and labeling.",
+      "Fine-tuned ALBERT, DistilBERT, and RoBERTa (with LoRA adaptation), achieving 67.6% accuracy and a 0.68 macro-F1 score.",
+      "Conducted comprehensive ROC-AUC evaluation and detailed error analysis to identify model-specific confusion patterns, guiding future data augmentation strategies.",
+      "Developed a multi-step dataset pipeline: text extraction, cleaning, LLM completions, and final dataset aggregation.",
+      "Implemented and compared three transformer-based classifiers, each with dedicated training and evaluation notebooks.",
+      "Provided detailed results, visualizations, and a project report for reproducibility and transparency.",
+    ],
+  },
+  {
+    id: "fed-learn-defense",
     title: "Defense Technique Against Inference Attacks in Federated Learning",
     date: "Jul 2023",
     description:
@@ -94,7 +148,7 @@ export default function Projects() {
 
                 <div className="mt-16 space-y-8">
                   {projects.map((project) => (
-                    <ProjectCard key={project.title} {...project} />
+                    <ProjectCard key={project.id} {...project} />
                   ))}
                 </div>
               </motion.div>

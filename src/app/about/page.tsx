@@ -6,13 +6,7 @@ import Footer from "@/components/Footer";
 import Timeline from "@/components/Timeline";
 
 const skills = {
-  "Programming Languages": [
-    "Python",
-    "JavaScript/TypeScript",
-    "Java",
-    "C/C++",
-    "SQL",
-  ],
+  "Programming Languages": ["Python", "JavaScript/TypeScript", "C/C++", "SQL"],
   "Web Development": [
     "React.js",
     "Next.js",

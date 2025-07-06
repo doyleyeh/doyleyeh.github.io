@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import SpamApiDemo from "./SpamApiDemo";
+import React, { useState } from "react";
 
 interface ProjectCardProps {
   title: string;
@@ -22,6 +24,7 @@ export default function ProjectCard({
   demoUrl,
   achievements,
 }: ProjectCardProps) {
+  const [showDemo, setShowDemo] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -93,6 +96,20 @@ export default function ProjectCard({
             </span>
           ))}
         </div>
+        {title === "Spam Classification API" && (
+          <div className="mt-4">
+            <div className="flex justify-end">
+              <button
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                onClick={() => setShowDemo((prev) => !prev)}
+                type="button"
+              >
+                {showDemo ? "Hide Demo" : "Show Demo"}
+              </button>
+            </div>
+            {showDemo && <SpamApiDemo />}
+          </div>
+        )}
       </div>
     </motion.div>
   );
