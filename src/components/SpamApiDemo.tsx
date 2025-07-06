@@ -166,7 +166,18 @@ export default function SpamApiDemo() {
       {result && (
         <div className="mt-3">
           <div>
-            <strong>Prediction:</strong> {result.prediction}
+            <strong>Prediction:</strong>{" "}
+            <span
+              className={
+                result.prediction === "spam"
+                  ? "text-red-600 font-bold"
+                  : result.prediction === "ham"
+                  ? "text-green-600 font-bold"
+                  : ""
+              }
+            >
+              {result.prediction}
+            </span>
           </div>
           <div>
             <strong>Confidence:</strong> {(result.confidence * 100).toFixed(2)}%
@@ -186,7 +197,18 @@ export default function SpamApiDemo() {
                   <strong>Message:</strong> {res.text}
                 </div>
                 <div>
-                  <strong>Prediction:</strong> {res.prediction}
+                  <strong>Prediction:</strong>{" "}
+                  <span
+                    className={
+                      res.prediction === "spam"
+                        ? "text-red-600 font-bold"
+                        : res.prediction === "ham"
+                        ? "text-green-600 font-bold"
+                        : ""
+                    }
+                  >
+                    {res.prediction}
+                  </span>
                 </div>
                 <div>
                   <strong>Confidence:</strong>{" "}
